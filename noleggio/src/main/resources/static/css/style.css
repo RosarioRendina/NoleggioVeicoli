@@ -72,8 +72,8 @@ h1, h2 {
     background-repeat: no-repeat;
     background-position: center center;
     /*nota: viene ereditata anche da desktop!*/
-
-    height: 60vh;
+/* 
+    height: 60vh; */
 
     color: #000000;
 
@@ -87,13 +87,66 @@ h1, h2 {
     color: #000000;
 }
 
-.options {
-    border: 2px solid red;
+ul {
+    list-style: none; 
+    padding: 3rem; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: stretch; 
+    gap: 1rem; 
 }
 
-ul {
-    list-style: none;
-    padding: 4rem;
+ul li {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem; 
+    width: 100%; 
+    background-color: rgb(240, 240, 240); 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+}
+
+ul li i {
+    font-size: 1.5rem;
+    color: #007bff; 
+    margin-right: 1rem; 
+}
+
+ul li .search-form input {
+    flex: 1; /* Permette al campo di input di occupare tutto lo spazio rimanente */
+    padding: 0.75rem; /* Spaziatura interna */
+    border: none; /* Rimuove il bordo interno */
+    border-radius: 8px; /* Arrotonda gli angoli */
+    font-size: 1rem; /* Dimensione del testo */
+    background-color: #ffffff; /* Sfondo bianco */
+}
+
+ul li .search-form input:focus {
+    outline: none; 
+    border: 2px solid #007bff; 
+}
+
+
+ul .search-form input:focus {
+    outline: none; 
+    border-color: #007bff; 
+}
+
+
+.options {
+    display: flex;
+    align-items: start;
+    /* border: 2px solid red;  */
+    /* background-color: rgba(232, 235, 232, 0.155);  */
+    border-radius: 16px;
+    
+}
+
+.opzioni {
+    align-items: center;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -151,4 +204,42 @@ color:#efefef;
     textarea {
         height: auto;
     }
+}
+
+/* -------------------------------- carosello ------------------------------- */
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
