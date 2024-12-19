@@ -19,6 +19,44 @@ h1, h2 {
     border-bottom: 2px dotted #666;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                   NAV BAR                                   */
+/* -------------------------------------------------------------------------- */
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.navbar {
+    background: rgb(232, 235, 232);
+}
+
+.search-form {
+ 
+    align-items: center;
+}
+
+.user-icon {
+    width: 1.8rem;  
+    height: 1.8rem;  
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+}   
+
+.fa-user {
+    height: 70%;
+    width: auto;
+
+}
+
+.offcanvas-body {
+    justify-content: space-between;
+
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                    HERO                                    */
@@ -37,13 +75,25 @@ h1, h2 {
 
     height: 60vh;
 
-    color: #efefef;
+    color: #000000;
+
+    background: rgb(253,232,209);
+    background: linear-gradient(0deg, rgba(253,232,209,1) 0%, rgba(187,127,54,1) 100%);;
 
 
 }
 
 #hero h1 {
-    color: #efefef;
+    color: #000000;
+}
+
+.options {
+    border: 2px solid red;
+}
+
+ul {
+    list-style: none;
+    padding: 4rem;
 }
 
 /* -------------------------------------------------------------------------- */
