@@ -1,0 +1,104 @@
+/* -------------------------------------------------------------------------- */
+/*                                 STILI FONT                                 */
+/* -------------------------------------------------------------------------- */
+
+body {
+    font-family: 'Reddit Sans', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Pacifico', serif;
+    color: #4A0000;
+}
+
+.section-title {
+    margin-top: 4rem;
+}
+
+.section-title h2 {
+    border-bottom: 2px dotted #666;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    HERO                                    */
+/* -------------------------------------------------------------------------- */
+
+#hero {
+
+
+    background-image: url('img/hero.jpg');
+
+    /* The holy trinity of background images */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*nota: viene ereditata anche da desktop!*/
+
+    height: 60vh;
+
+    color: #efefef;
+
+
+}
+
+#hero h1 {
+    color: #efefef;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                IMAGE SPACER                                */
+/* -------------------------------------------------------------------------- */
+
+#image-spacer {
+    background-image: url('./img/la_webp.webp');
+
+      /* The holy trinity of background images */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      /*nota: viene ereditata anche da desktop!*/
+
+      background-attachment: fixed; /*nessuno scroll sull'immagine*/
+      height:400px;
+
+      margin: 5rem auto;
+}
+
+/* Background-attachment: fixed ha problemi su Safari. Per ovviare possiamo usare questo hack: */
+
+@supports (-webkit-touch-callout: none) {
+    #image-spacer {
+      background-attachment: scroll; /* Disabilita fixed solo su Safari */
+    }
+  }
+
+
+textarea {
+    height:200px;
+}
+
+
+#main-footer {
+background: #7571bb;
+color:#efefef;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 STILI LARGE                                */
+/* -------------------------------------------------------------------------- */
+
+@media screen and (min-width:992px) {
+
+    #hero {
+        /*se abbiamo la navbar normale e non fixed-top*/
+        height: calc(100vh - 67px);
+        
+       
+    }
+
+    textarea {
+        height: auto;
+    }
+}
