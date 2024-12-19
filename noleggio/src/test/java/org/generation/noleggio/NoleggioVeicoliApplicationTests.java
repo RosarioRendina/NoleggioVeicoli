@@ -1,4 +1,4 @@
-package com.generation.org.noleggio;
+package org.generation.noleggio;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

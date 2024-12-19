@@ -1,4 +1,4 @@
-package com.generation.org.noleggio;
+package org.generation.noleggio;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
