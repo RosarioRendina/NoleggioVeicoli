@@ -11,6 +11,10 @@ public class HtmlCtrl {
 		return "index";
 	}
 
+	@GetMapping("/test")
+	public String test() {
+		return "prova";
+	}
 	/* EVENTUALE REMAPPING PAGINE */
 	
 }
