@@ -24,7 +24,7 @@
     <!-- Navbar con off-canvas: https://getbootstrap.com/docs/5.3/components/navbar/#offcanvas -->
 
     <!-- NOTA: aggiungo la classe navbar-expand-lg per espandere la nav su schermi grandi -->
-    <nav class="navbar navbar-expand-lg nav-login">
+    <nav class="navbar navbar-expand-lg nav-veicolo">
 
       <!-- NOTA: ho sostituito container-fluid con un .container per stringere la navbar -->
       <div class="container">
@@ -91,22 +91,26 @@
         <p id="vehicle-description"></p>
     </div> -->
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Veicolo</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos corporis temporibus, dolor non voluptate laudantium?</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Nome Veicolo</li>
-          <li class="list-group-item">Catgoria</li>
-          <li class="list-group-item"></li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="card-container">
+        <div class="card" style="width: 18rem;">
+            <img src="images/cammello.jpg" class="card-img-top img-card" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Veicolo</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos corporis temporibus, dolor non voluptate laudantium?</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Disponibile</li>
+              <li class="list-group-item">Catgoria</li>
+              <li class="list-group-item">Alimentazione</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
       </div>
+    </div>
 
     <script src="js/veicolo.js"></script>
 </body>

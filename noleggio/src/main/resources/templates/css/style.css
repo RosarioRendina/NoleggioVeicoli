@@ -323,3 +323,16 @@ body {
 .form-container button {
     height: 5rem;
 }
+
+
+
+
+
+/*-------------------------------VEICOLO----------------------------------------------------*/
+.card-container{
+    margin-top: 4rem;
+}
+
+.img-card{
+    max-width: 100%;
+}
