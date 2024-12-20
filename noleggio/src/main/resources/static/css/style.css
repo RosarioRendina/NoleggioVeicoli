@@ -19,6 +19,44 @@ h1, h2 {
     border-bottom: 2px dotted black;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                   NAV BAR                                   */
+/* -------------------------------------------------------------------------- */
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.navbar {
+    background: rgb(232, 235, 232);
+}
+
+.search-form {
+ 
+    align-items: center;
+}
+
+.user-icon {
+    width: 1.8rem;  
+    height: 1.8rem;  
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+}   
+
+.fa-user {
+    height: 70%;
+    width: auto;
+
+}
+
+.offcanvas-body {
+    justify-content: space-between;
+
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                    HERO                                    */
@@ -34,16 +72,81 @@ h1, h2 {
     background-repeat: no-repeat;
     background-position: center center;
     /*nota: viene ereditata anche da desktop!*/
+/* 
+    height: 60vh; */
 
-    height: 60vh;
+    color: #000000;
 
-    color: #efefef;
+    background: rgb(253,232,209);
+    background: linear-gradient(0deg, rgba(253,232,209,1) 0%, rgba(187,127,54,1) 100%);;
 
 
 }
 
 #hero h1 {
-    color: #efefef;
+    color: #000000;
+}
+
+ul {
+    list-style: none; 
+    padding: 3rem; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: stretch; 
+    gap: 1rem; 
+}
+
+ul li {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem; 
+    width: 100%; 
+    background-color: rgb(240, 240, 240); 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+}
+
+ul li i {
+    font-size: 1.5rem;
+    color: #007bff; 
+    margin-right: 1rem; 
+}
+
+ul li .search-form input {
+    flex: 1; /* Permette al campo di input di occupare tutto lo spazio rimanente */
+    padding: 0.75rem; /* Spaziatura interna */
+    border: none; /* Rimuove il bordo interno */
+    border-radius: 8px; /* Arrotonda gli angoli */
+    font-size: 1rem; /* Dimensione del testo */
+    background-color: #ffffff; /* Sfondo bianco */
+}
+
+ul li .search-form input:focus {
+    outline: none; 
+    border: 2px solid #007bff; 
+}
+
+
+ul .search-form input:focus {
+    outline: none; 
+    border-color: #007bff; 
+}
+
+
+.options {
+    display: flex;
+    align-items: start;
+    /* border: 2px solid red;  */
+    /* background-color: rgba(232, 235, 232, 0.155);  */
+    border-radius: 16px;
+    
+}
+
+.opzioni {
+    align-items: center;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -101,4 +204,42 @@ color:#efefef;
     textarea {
         height: auto;
     }
+}
+
+/* -------------------------------- carosello ------------------------------- */
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
