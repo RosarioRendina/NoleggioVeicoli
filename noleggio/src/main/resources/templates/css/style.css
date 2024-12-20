@@ -85,7 +85,7 @@ h1, h2 {
 #hero {
 
 
-    background-image: url('img/hero.jpg');
+    background-image: url('../img/hero.jpg');
 
     /* The holy trinity of background images */
     background-size: cover;
@@ -195,7 +195,7 @@ ul .search-form input:focus {
 /* -------------------------------------------------------------------------- */
 
 #image-spacer {
-    background-image: url('img/la_webp.webp');
+    background-image: url('../img/la_webp.webp');
 
       /* The holy trinity of background images */
       background-size: cover;
@@ -336,24 +336,15 @@ body {
     height: 5rem;
 }
 
-span {
-    font-size: 32px;
+
+
+
+
+/*-------------------------------VEICOLO----------------------------------------------------*/
+.card-container{
+    margin-top: 4rem;
 }
 
-.icone {
-    display: flex;
-    justify-content: center; 
-    padding: 2rem;
-    gap:2rem;
-    font-size: 24px;
-    color: rgb(64, 64, 64)
+.img-card{
+    max-width: 100%;
 }
-
-#accedi-con, #giuauser {
-    font-size: 32px;
-}
-
-#forms-login input::placeholder{
-    font-size: 32px;
-}
-

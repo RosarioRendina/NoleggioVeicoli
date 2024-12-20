@@ -29,7 +29,7 @@ public class LoginCtrl {
 				.orElse(null);
 		
 		if (utente != null && utente.getPassword().equals(utenteDto.getPassword())) {
-			session.setAttribute("currentUser", utente.getEmail());
+			session.setAttribute("currentUser", utente);
 			return ResponseEntity.ok("Login effettuato con successo");
 		} else {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenziali non valide.");
@@ -44,13 +44,13 @@ public class LoginCtrl {
 	
 	@GetMapping("/protected")
 	public ResponseEntity<String> testProtected(HttpSession session) {
-		String currentUser = (String) session.getAttribute("currentUser");
+		Utente currentUser = (Utente) session.getAttribute("currentUser");
 		
 		if (currentUser == null) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Devi essere loggato per accedere");
 		}
 		
-		return ResponseEntity.ok("Benvenuto, " + currentUser + " - Questa è una risorsa protetta.");
+		return ResponseEntity.ok("Benvenuto, " + currentUser.getNome() + " - Questa è una risorsa protetta.");
 	}
 	
 }
