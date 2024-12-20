@@ -85,7 +85,7 @@ h1, h2 {
 #hero {
 
 
-    background-image: url('img/hero.jpg');
+    background-image: url('../img/hero.jpg');
 
     /* The holy trinity of background images */
     background-size: cover;
@@ -195,7 +195,7 @@ ul .search-form input:focus {
 /* -------------------------------------------------------------------------- */
 
 #image-spacer {
-    background-image: url('img/la_webp.webp');
+    background-image: url('../img/la_webp.webp');
 
       /* The holy trinity of background images */
       background-size: cover;
