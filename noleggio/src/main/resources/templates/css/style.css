@@ -291,10 +291,16 @@ body {
 
 /*---------------------------------LOGIN--------------------------------------------*/
 
+.form-card {
+    border: 2px solid purple;
+    height: 95%;
+    background-image: url(../images/cammellilogin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .form-container {
-
-    margin-top: 10rem;
+    margin-top: 15rem;
     margin-left: 5rem;
     margin-right: 5rem;
     display: flex;
@@ -303,17 +309,23 @@ body {
     border: 2px solid rgb(145, 145, 145);
     border-radius: 16px;
     background-color: #fff;
+    position: relative;
     
 }
+
+.form-container h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    font-size: 5rem;
+  }
 
 #login {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
 
-.form-card {
-    border: 2px solid purple;
-}
 
 .form-container input {
     height: 5rem;
@@ -323,3 +335,25 @@ body {
 .form-container button {
     height: 5rem;
 }
+
+span {
+    font-size: 32px;
+}
+
+.icone {
+    display: flex;
+    justify-content: center; 
+    padding: 2rem;
+    gap:2rem;
+    font-size: 24px;
+    color: rgb(64, 64, 64)
+}
+
+#accedi-con, #giuauser {
+    font-size: 32px;
+}
+
+#forms-login input::placeholder{
+    font-size: 32px;
+}
+
