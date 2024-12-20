@@ -32,7 +32,7 @@ public class VeicoloCtrl {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Veicolo> getOneById(@PathVariable("id") int id)
+	public ResponseEntity<Veicolo> getOneById(@PathVariable int id)
 	{
 		try {
 			Veicolo v = veicoloService.cercaPerId(id);
