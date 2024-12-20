@@ -178,9 +178,16 @@ ul .search-form input:focus {
     align-items: center;
 }
 
-.hero-img {
+.secondo-text {
+    background-color: #d1613d;
+    color: #eee;
+}
 
 
+
+.immaginejeep {
+    
+    width: 100%;
 }
 
 /* -------------------------------------------------------------------------- */
