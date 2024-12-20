@@ -23,7 +23,7 @@
     <!-- Navbar con off-canvas: https://getbootstrap.com/docs/5.3/components/navbar/#offcanvas -->
 
     <!-- NOTA: aggiungo la classe navbar-expand-lg per espandere la nav su schermi grandi -->
-    <nav class="navbar navbar-expand-lg nav-login">
+    <nav class="navbar navbar-expand-lg">
 
       <!-- NOTA: ho sostituito container-fluid con un .container per stringere la navbar -->
       <div class="container">
@@ -85,14 +85,10 @@
     <div class="form-card">
       <section class="form-container">
 
+        <h1>Sign up</h1>
         
-        <h1 id="h1-login">Log-in</h1>
         <div class="container d-flex justify-content-center align-items-center mt-5" id="login">
-          <div class="justify-content-center">
-            
-          </div>
               <div class="text-center col-md-9" id="forms-login">
-                
                <form>
                   <div class="mb-3">
                       <label for="email" class="form-label"></label>
@@ -102,12 +98,8 @@
                       <label for="password" class="form-label"></label>
                       <input type="password" id="password" class="form-control" placeholder="Password" />
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="rememberMe">
-                    <label class="form-check-label" for="rememberMe">Ricordami</label>
-                  </div>
                   <div class="mb-4">
-                      <button onclick="login()" class="btn btn-primary w-100"><span>Log-in</span></button>
+                      <button onclick="login()" class="btn btn-primary w-100"><span>Sign up</span></button>
                   </div>
                   <!-- <div class="mb-4">
                       <button onclick="accessProtected()" class="btn btn-secondary w-100">Access Protected Resource</button>
@@ -126,7 +118,7 @@
                     <i class="fab fa-linkedin fa-2x icon"></i>
                 </div>
 
-               
+                <p id="giauser">Sei già uno user? <a href="?">Log-in</a></p>
 
               </form>
               </div>
