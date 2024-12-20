@@ -17,4 +17,29 @@ public class HtmlCtrl {
 	}
 	/* EVENTUALE REMAPPING PAGINE */
 	
+	@GetMapping("/errore")
+	public String errore() {
+		return "errore";
+	}
+	
+	@GetMapping("/inserisci")
+	public String inserisci() {
+		return "inserisci";
+	}
+	
+	@GetMapping("/pannello")
+	public String pannello() {
+		return "pannello";
+	}
+	
+	@GetMapping("/utente")
+	public String utente() {
+		return "utente";
+	}
+	
+	@GetMapping("/veicolo")
+	public String veicolo() {
+		return "veicolo";
+	}
+	
 }

@@ -16,11 +16,14 @@
             });
 
             if (response.ok) {
+				// salva in localStorage utente email
                 alert('Login successful!');
             } else {
                 alert('Invalid credentials!');
             }
         }
+        
+        // if utente email in localStorage -> form email value = localStorage(utenteEmail)
 
         async function accessProtected() {
             const response = await fetch('/test/protected');

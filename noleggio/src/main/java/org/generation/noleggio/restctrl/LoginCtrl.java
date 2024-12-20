@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("test")
-@SessionAttributes("currentUser")
+@SessionAttributes("currentUser")  // a login effettuato -> currentUser = emailUtente (o utente.getEmail())
 public class LoginCtrl {
 
 	@Autowired
@@ -42,15 +42,15 @@ public class LoginCtrl {
 		return ResponseEntity.ok("Logout effettuato con successo");
 	}
 	
-//	@GetMapping("/protected")
-//	public ResponseEntity<String> testProtected(HttpSession session) {
-//		String currentUser = (String) session.getAttribute("currentUser");
-//		
-//		if (currentUser == null) {
-//			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Devi essere loggato per accedere");
-//		}
-//		
-//		return ResponseEntity.ok("Benvenuto, " + currentUser + " - Questa è una risorsa protetta.");
-//	}
+	@GetMapping("/protected")
+	public ResponseEntity<String> testProtected(HttpSession session) {
+		String currentUser = (String) session.getAttribute("currentUser");
+		
+		if (currentUser == null) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Devi essere loggato per accedere");
+		}
+		
+		return ResponseEntity.ok("Benvenuto, " + currentUser + " - Questa è una risorsa protetta.");
+	}
 	
 }
