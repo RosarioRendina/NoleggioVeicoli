@@ -14,9 +14,69 @@ fetch(key)
 })
 .then(data => {
     console.log(data); 
-    veicoli.push(data);
+    aggiungiVeicoli(data);
     
 })
 .catch(error => {
     console.error('Errore:', error);
 });
+
+function aggiungiVeicoli(veicoli) {
+    let container = document.querySelector('.swiper-wrapper');
+
+    veicoli.forEach(veicolo => {
+        const imageUrl = getImageUrl(veicolo.categoria);
+        container.innerHTML+= `
+            <div class="swiper-slide">
+                <div class="card" style="max-width: 18rem;">
+                    <img src="${imageUrl}" class="card-img-top" alt="${veicolo.categoria}">
+                    <div class="card-body">
+                        <h5 class="card-title">${veicolo.categoria}</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Marca: ${veicolo.marca}</li>
+                            <li class="list-group-item">Modello: ${veicolo.modello}</li>
+                            <li class="list-group-item">Indirizzo: ${veicolo.indirizzo}</li>
+                            <li class="list-group-item">Disponibilità: ${veicolo.disponibilita}</li>
+                        </ul>
+                        <div class="card-body text-center d-flex">
+                        <a href="/templates/utente.html" class="card-link btn btn-primary" style="margin-right: 0.5rem;">Prenota</a>
+                        <a href="/templates/veicolo.html" class="card-link btn btn-secondary">Informazioni</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+
+}
+
+let monopattinoUrl = 'images/monopattino.jpg';
+let cammelloUrl = 'images/cammello.png';
+let biciUrl = 'images/bicicletta.jpg';
+let furgoneUrl = 'images/furgone.jpg';
+let macchinaUrl = 'images/macchina.jpg';
+let scooterUrl = 'images/motorino.png';
+let motoUrl = 'images/moto.jpg';
+
+function getImageUrl(categoria) {
+    if (categoria === 'AUTO') {
+        return macchinaUrl;
+    } else if (categoria === 'SCOOTER') {
+        return scooterUrl;
+    } else if (categoria === 'MOTO') {
+        return motoUrl;
+    } else if (categoria === 'FURGONE') {
+        return furgoneUrl;
+    } else if (categoria === 'MONOPATTINO') {
+        return monopattinoUrl;
+    } else if (categoria === 'CAMMELLO') {
+        return cammelloUrl;
+    } else if (categoria === 'MACCHINA') {
+        return macchinaUrl;
+    } else if (categoria === 'BICICLETTA') {
+        return biciUrl;
+    } else {
+        return 'images/default.jpg';
+    }
+}

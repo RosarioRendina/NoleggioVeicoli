@@ -300,6 +300,17 @@ body {
 
 }
 
+.container-carousel{
+
+    border: 2px solid black;
+    background: rgb(181,66,39);
+background: linear-gradient(180deg, rgba(181,66,39,1) 0%, rgba(238,238,238,1) 100%);
+
+}
+
+.card {
+    margin-top: 4rem;
+}
 
 /*---------------------------------LOGIN / SIGNUP --------------------------------------------*/
 /*---------------------------------SIGN-UP--------------------------------------------*/
