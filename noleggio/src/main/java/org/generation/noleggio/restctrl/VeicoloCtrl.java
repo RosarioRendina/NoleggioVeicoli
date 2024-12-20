@@ -66,7 +66,7 @@ public class VeicoloCtrl {
 			
 		}catch (DataIntegrityViolationException e)
 		{
-			return ResponseEntity.badRequest().body("Errore inserimento dati, controllare le proprietà dell'oggetto");
+			return ResponseEntity.badRequest().body("Errore inserimento dati");
 		}
 		catch (Exception e) {
 			return ResponseEntity.internalServerError().body(new Veicolo());

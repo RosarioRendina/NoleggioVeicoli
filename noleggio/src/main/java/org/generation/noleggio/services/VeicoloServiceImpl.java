@@ -29,7 +29,28 @@ public class VeicoloServiceImpl implements VeicoloService{
 
 	@Override
 	public VeicoloDto aggiungi(Veicolo veicolo) {
-		// TODO Auto-generated method stub
-		return null;
+		veicoloRepository.save(veicolo);
+		
+		return this.toVeicoloDto(veicolo);
+	}
+	
+	private VeicoloDto toVeicoloDto(Veicolo veicolo) {
+		
+		VeicoloDto veicoloDto = new VeicoloDto(
+				veicolo.getVeicolo_id(),
+				veicolo.getCategoria(), 
+				veicolo.getAnno(), 
+				veicolo.getMarca(), 
+				veicolo.getModello(), 
+				veicolo.getColore(),
+				veicolo.getCilindrata(), 
+				veicolo.getAlimentazione(), 
+				veicolo.getIndirizzo(), 
+				veicolo.getCoordinate(), 
+				veicolo.isDisponibilita(), 
+				veicolo.getImg_veicolo()
+				);
+		
+		return veicoloDto;
 	}
 }

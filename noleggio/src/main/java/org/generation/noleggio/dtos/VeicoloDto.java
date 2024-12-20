@@ -2,7 +2,7 @@ package org.generation.noleggio.dtos;
 
 public class VeicoloDto {
 	
-	private int utente_id;
+	private int veicolo_id;
 	private VeicoloCategoria categoria;
 	private Integer anno;
 	private String marca;
@@ -18,10 +18,10 @@ public class VeicoloDto {
 	public VeicoloDto() {
 	}
 	
-	public VeicoloDto(int utente_id, VeicoloCategoria categoria, Integer anno, String marca, String modello,
+	public VeicoloDto(int veicolo_id, VeicoloCategoria categoria, Integer anno, String marca, String modello,
 			String colore, Integer cilindrata, VeicoloAlimentazione alimentazione, String indirizzo, String coordinate,
 			boolean disponibilita, String img_veicolo) {
-		this.utente_id = utente_id;
+		this.veicolo_id = veicolo_id;
 		this.categoria = categoria;
 		this.anno = anno;
 		this.marca = marca;
@@ -35,12 +35,12 @@ public class VeicoloDto {
 		this.img_veicolo = img_veicolo;
 	}
 
-	public int getUtente_id() {
-		return utente_id;
+	public int getveicolo_id() {
+		return veicolo_id;
 	}
 
-	public void setUtente_id(int utente_id) {
-		this.utente_id = utente_id;
+	public void setveicolo_id(int veicolo_id) {
+		this.veicolo_id = veicolo_id;
 	}
 
 	public VeicoloCategoria getCategoria() {
