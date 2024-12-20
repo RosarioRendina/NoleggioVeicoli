@@ -30,7 +30,7 @@ h1, h2 {
 }
 
 .navbar {
-    background: rgb(232, 235, 232);
+    background: rgba(255, 255, 255, 0.104);
 }
 
 .search-form {
@@ -46,6 +46,16 @@ h1, h2 {
     text-align: center;
 }   
 
+.logo {
+    max-height: 50px;
+    max-width: 50px;
+    margin-left: 2rem;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.492);
+}
+
 .fa-user {
     height: 70%;
     width: auto;
@@ -55,6 +65,16 @@ h1, h2 {
 .offcanvas-body {
     justify-content: space-between;
 
+}
+
+.background {
+    background-image: url(../images/dunedesert.jpg);
+    /* background-position: start;
+    background-repeat: no-repeat;
+    height: 100vh; */
+
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -77,9 +97,8 @@ h1, h2 {
 
     color: #000000;
 
-    background: rgb(253,232,209);
-    background: linear-gradient(0deg, rgba(253,232,209,1) 0%, rgba(187,127,54,1) 100%);;
-
+    /* background: rgb(253,232,209);
+    background: linear-gradient(0deg, rgba(253,232,209,1) 0%, rgba(187,127,54,1) 100%);; */
 
 }
 
@@ -95,7 +114,7 @@ ul {
     flex-direction: column; 
     justify-content: space-between; 
     align-items: stretch; 
-    gap: 1rem; 
+    /* gap: 1rem;  */
 }
 
 ul li {
@@ -105,8 +124,8 @@ ul li {
     padding: 1rem; 
     width: 100%; 
     background-color: rgb(240, 240, 240); 
-    border: 1px solid #ccc; 
-    border-radius: 8px; 
+    /* border: 1px solid #ccc;  */
+    /* border-radius: 8px;  */
 }
 
 ul li i {
@@ -116,17 +135,27 @@ ul li i {
 }
 
 ul li .search-form input {
-    flex: 1; /* Permette al campo di input di occupare tutto lo spazio rimanente */
-    padding: 0.75rem; /* Spaziatura interna */
-    border: none; /* Rimuove il bordo interno */
-    border-radius: 8px; /* Arrotonda gli angoli */
-    font-size: 1rem; /* Dimensione del testo */
-    background-color: #ffffff; /* Sfondo bianco */
+    flex: 1; 
+    padding: 0.75rem; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 1rem; 
+    background-color: #ffffff; 
 }
 
 ul li .search-form input:focus {
     outline: none; 
     border: 2px solid #007bff; 
+}
+
+ul li:first-child {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+ul li:last-child {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 
 
@@ -147,6 +176,11 @@ ul .search-form input:focus {
 
 .opzioni {
     align-items: center;
+}
+
+.hero-img {
+
+
 }
 
 /* -------------------------------------------------------------------------- */
@@ -186,6 +220,9 @@ textarea {
 background: #7571bb;
 color:#efefef;
 }
+
+
+
 
 
 /* -------------------------------------------------------------------------- */
