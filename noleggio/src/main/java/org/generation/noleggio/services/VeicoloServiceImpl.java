@@ -1,6 +1,7 @@
 package org.generation.noleggio.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.generation.noleggio.dtos.VeicoloDto;
 import org.generation.noleggio.entities.Veicolo;
@@ -23,13 +24,37 @@ public class VeicoloServiceImpl implements VeicoloService{
 
 	@Override
 	public Veicolo cercaPerId(int id) {
-		// TODO Auto-generated method stub
+		Optional<Veicolo> veicolo = veicoloRepository.findById(id);
+		if (veicolo.isPresent()) {
+			return veicolo.get();
+		}
 		return null;
 	}
 
 	@Override
 	public VeicoloDto aggiungi(Veicolo veicolo) {
-		// TODO Auto-generated method stub
-		return null;
+		veicoloRepository.save(veicolo);
+		
+		return this.toVeicoloDto(veicolo);
+	}
+	
+	private VeicoloDto toVeicoloDto(Veicolo veicolo) {
+		
+		VeicoloDto veicoloDto = new VeicoloDto(
+				veicolo.getVeicolo_id(),
+				veicolo.getCategoria(), 
+				veicolo.getAnno(), 
+				veicolo.getMarca(), 
+				veicolo.getModello(), 
+				veicolo.getColore(),
+				veicolo.getCilindrata(), 
+				veicolo.getAlimentazione(), 
+				veicolo.getIndirizzo(), 
+				veicolo.getCoordinate(), 
+				veicolo.isDisponibilita(), 
+				veicolo.getImg_veicolo()
+				);
+		
+		return veicoloDto;
 	}
 }

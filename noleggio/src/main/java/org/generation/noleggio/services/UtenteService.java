@@ -2,6 +2,7 @@ package org.generation.noleggio.services;
 
 import java.util.List;
 
+import org.generation.noleggio.dtos.UtenteDto;
 import org.generation.noleggio.entities.Utente;
 
 public interface UtenteService {
@@ -12,4 +13,7 @@ public interface UtenteService {
 	List<Utente> prendiTutti();
 	
 	// Registra Utente
+	UtenteDto aggiungi(Utente utente);
+	
+	Utente cercaPerId(int id);
 }
