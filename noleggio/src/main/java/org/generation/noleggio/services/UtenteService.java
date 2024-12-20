@@ -10,4 +10,6 @@ public interface UtenteService {
 	// Eventuali permessi di accesso / modifica delle prenotazioni
 	
 	List<Utente> prendiTutti();
+	
+	// Registra Utente
 }
