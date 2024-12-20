@@ -38,15 +38,16 @@ public class HtmlCtrl {
 	@GetMapping("/pannello")
 	public String pannello(HttpSession session) {
 		
-		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
+//		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
 		
-		if (currentUser.isPresent()) {
-			Utente utente = (Utente) currentUser.get();
-			
-			return (utente.getRuolo() == UtenteRuolo.UTENTE) ? "errore" : "pannello";
-		} else {
-			return "login";
-		}
+//		if (currentUser.isPresent()) {
+//			Utente utente = (Utente) currentUser.get();
+//			
+//			return (utente.getRuolo() == UtenteRuolo.UTENTE) ? "errore" : "pannello";
+//		} else {
+//			return "login";
+//		}
+		return "pannello";
 	}
 	
 	@GetMapping("/utente")

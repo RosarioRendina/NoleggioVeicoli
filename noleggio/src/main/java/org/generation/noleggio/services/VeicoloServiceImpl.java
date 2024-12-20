@@ -1,6 +1,7 @@
 package org.generation.noleggio.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.generation.noleggio.dtos.VeicoloDto;
 import org.generation.noleggio.entities.Veicolo;
@@ -23,7 +24,10 @@ public class VeicoloServiceImpl implements VeicoloService{
 
 	@Override
 	public Veicolo cercaPerId(int id) {
-		// TODO Auto-generated method stub
+		Optional<Veicolo> veicolo = veicoloRepository.findById(id);
+		if (veicolo.isPresent()) {
+			return veicolo.get();
+		}
 		return null;
 	}
 

@@ -14,4 +14,6 @@ public interface UtenteService {
 	
 	// Registra Utente
 	UtenteDto aggiungi(Utente utente);
+	
+	Utente cercaPerId(int id);
 }
