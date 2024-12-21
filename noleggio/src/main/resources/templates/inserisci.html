@@ -22,79 +22,83 @@
 </head>
 <body>
     
-    <div class="container">
-        <h1>Inserisci Nuovo Veicolo</h1>
-        <form id="vehicle-form" onsubmit="submitForm(event)">
-           
-            <!-- VEICOLI-->
-            <label for="category">Categoria Veicolo * </label>
-            <select id="category" required>
-                <option value=""> </option>
-                <option value="Auto">Auto</option>
-                <option value="Bicicletta">Bicicletta</option>
-                <option value="Cammello">Cammello</option>
-                <option value="Furgone">Furgone</option>
-                <option value="Moto">Moto</option>
-                <option value="Monopattino">Monopattino</option>
-                <option value="Scooter">Scooter</option>
-            </select>
-            <br>
-            
-            <!-- DESCRIZIONE -->
-            <label for="description">Descrizione * </label>
-            <br>
-            <input type="text" id="anno" placeholder="Anno" required>
-            <br>
-            <input type="text" id="marca" placeholder="Marca" required>
-            <br>
-            <input type="text" id="modello" placeholder="Modello">
-            <br>
-            <input type="text" id="colore" placeholder="Colore">
-            <br>
-            <input type="text" id="cilindrata" placeholder="Cilindrata">
-            <br>
-          
-
-            <!-- ALIMENTAZIONE-->
-            <label for="fuel">Alimentazione * </label>
-            <select id="fuel" required>
-                <option value=""> </option>
-                <option value="Null"> - </option>
-                <option value="Benzina">Benzina</option>
-                <option value="Diesel">Diesel</option>
-                <option value="Elettrica">Elettrica</option>
-                <option value="Ibrida">Ibrida</option>
-            </select>
-            <br>
-            
-            <!-- INDIRIZZO -->
-            <label for="address">Indirizzo * </label>
-            <input type="text" id="address" placeholder="Inserisci l'indirizzo" required>
-            <br>
-            
-            <!-- GPS -->
-            <label for="gps">Coordinate GPS</label>
-            <input type="text" id="gps" placeholder="">
-            <br>
-            
-            <!-- DISPONIBILITA NOLEGGIO -->
-            <label for="availability">Disponibilità al noleggio</label>
-            <select id="availability">
-                <option value="Null"> </option>
-                <option value="Disponibile">Disponibile</option>
-                <option value="Non disponibile">Non disponibile</option>
-            </select>
-            <br>
-            
-            <!-- UPLOAD IMMAGINE -->
-            <label for="image">Carica immagine</label>
-            <input type="file" id="image" accept="image/*">
-            <br>
-
-            <button type="submit">Inserisci Veicolo</button>
-        </form>
-
-        <button onclick="logout()">Logout</button>
+    <div class="d-flex justify-content-center align-items-center mt-5 container-form">
+        <div class="container col-lg-6 text-center">
+            <h1 class="mb-5">Inserisci Nuovo Veicolo</h1>
+            <form id="vehicle-form" onsubmit="submitForm(event)">
+        
+                <!-- VEICOLI-->
+                <label for="category">Categoria Veicolo * </label>
+                <select id="category" required>
+                    <option value=""> </option>
+                    <option value="Auto">Auto</option>
+                    <option value="Bicicletta">Bicicletta</option>
+                    <option value="Cammello">Cammello</option>
+                    <option value="Furgone">Furgone</option>
+                    <option value="Moto">Moto</option>
+                    <option value="Monopattino">Monopattino</option>
+                    <option value="Scooter">Scooter</option>
+                </select>
+                <br>
+        
+                <!-- DESCRIZIONE -->
+                <label for="description">Descrizione * </label>
+                <br>
+                <input type="text" id="anno" placeholder="Anno" required>
+                <br>
+                <input type="text" id="marca" placeholder="Marca" required>
+                <br>
+                <input type="text" id="modello" placeholder="Modello">
+                <br>
+                <input type="text" id="colore" placeholder="Colore">
+                <br>
+                <input type="text" id="cilindrata" placeholder="Cilindrata">
+                <br>
+        
+                <!-- ALIMENTAZIONE-->
+                <label for="fuel">Alimentazione * </label>
+                <br>
+                <select id="fuel" required>
+                    <option value=""> </option>
+                    <option value="Null"> - </option>
+                    <option value="Benzina">Benzina</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Elettrica">Elettrica</option>
+                    <option value="Ibrida">Ibrida</option>
+                </select>
+                <br>
+        
+                <!-- INDIRIZZO -->
+                <label for="address">Indirizzo * </label>
+                <br>
+                <input type="text" id="address" placeholder="Inserisci l'indirizzo" required>
+                <br>
+        
+                <!-- GPS -->
+                <label for="gps">Coordinate GPS</label>
+                <br>
+                <input type="text" id="gps" placeholder="Coordinate...">
+                <br>
+        
+                <!-- DISPONIBILITA NOLEGGIO -->
+                <label for="availability">Disponibilità al noleggio</label>
+                <br>
+                <select id="availability" class="mb-3">
+                    <option value="Null"> </option>
+                    <option value="Disponibile">Disponibile</option>
+                    <option value="Non disponibile">Non disponibile</option>
+                </select>
+                <br>
+        
+                <!-- UPLOAD IMMAGINE -->
+                <label for="image">Carica immagine</label>
+                <input type="file" id="image" accept="image/*">
+                <br>
+                <br>
+                <button type="submit" id="inserisci-veicolo">Inserisci Veicolo</button>
+            </form>
+            <button onclick="logout()" id="logout">Logout</button>
+        </div>
     </div>
 
 

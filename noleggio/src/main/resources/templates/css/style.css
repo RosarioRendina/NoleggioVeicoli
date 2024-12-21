@@ -301,8 +301,6 @@ body {
 }
 
 .container-carousel{
-
-    border: 2px solid black;
     background: rgb(181,66,39);
 background: linear-gradient(180deg, rgba(181,66,39,1) 0%, rgba(238,238,238,1) 100%);
 
@@ -310,6 +308,11 @@ background: linear-gradient(180deg, rgba(181,66,39,1) 0%, rgba(238,238,238,1) 10
 
 .card {
     margin-top: 4rem;
+}
+
+.card h5{
+    font-size: 20px;
+    font-weight: 800;
 }
 
 /*---------------------------------LOGIN / SIGNUP --------------------------------------------*/
@@ -435,4 +438,31 @@ span {
 
 .img-card{
     max-width: 100%;
+}
+
+/* ---------------------------- inserisci veicolo --------------------------- */
+
+.container-form {
+    padding: 1rem 0;
+    margin-right: 0;
+    margin-left: 0;
+    border: 1px solid #a7a7a7;
+    border-radius: 16px;
+    background-color: #ededed;
+    
+}
+
+#inserisci-veicolo {
+    background-color: greenyellow;
+    color: green;
+    margin: 2rem;
+    border-radius: 8px;
+    padding: 8px 1.5px;
+}
+
+#logout {
+    background-color: red;
+    border-radius: 8px;
+    padding: 8px 2rem;
+    color: #efefef;
 }
