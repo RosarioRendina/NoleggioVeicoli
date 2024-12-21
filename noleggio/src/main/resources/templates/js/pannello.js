@@ -33,21 +33,49 @@ function logout() {
 }
 
 //INSERIMENTO NUOVO VEICOLO
+// function submitForm(e) {
+//     e.preventDefault();
+//     const formData = {
+//         category: document.getElementById("category").value,
+//         anno:document.getElementById("anno").value,
+//         marca:document.getElementById("marca").value,
+//         modello:document.getElementById("modello").value,
+//         colore:document.getElementById("colore").value,
+//         cilindrata:document.getElementById("cilindrata").value,
+//         fuel: document.getElementById("fuel").value,
+//         address: document.getElementById("address").value,
+//         gps: document.getElementById("gps").value,
+//         availability: document.getElementById("availability").value
+//     }
+    
+//     fetch('/api/veicolo', {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(formData)
+//     })
+//     .then (response => {
+//         console.log(response);
+//         return response.json();
+//     })
+// };
+
 function submitForm(e) {
     e.preventDefault();
     const formData = {
         category: document.getElementById("category").value,
-        anno:document.getElementById("anno").value,
-        marca:document.getElementById("marca").value,
-        modello:document.getElementById("modello").value,
-        colore:document.getElementById("colore").value,
-        cilindrata:document.getElementById("cilindrata").value,
+        anno: document.getElementById("anno").value,
+        marca: document.getElementById("marca").value,
+        modello: document.getElementById("modello").value,
+        colore: document.getElementById("colore").value,
+        cilindrata: document.getElementById("cilindrata").value,
         fuel: document.getElementById("fuel").value,
         address: document.getElementById("address").value,
         gps: document.getElementById("gps").value,
         availability: document.getElementById("availability").value
-    }
-    
+    };
+
     fetch('/api/veicolo', {
         method: "POST",
         headers: {
@@ -55,8 +83,20 @@ function submitForm(e) {
         },
         body: JSON.stringify(formData)
     })
-    .then (response => {
-        console.log(response);
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Errore HTTP: ${response.status}`);
+        }
         return response.json();
     })
-};
+    .then(data => {
+        console.log("Risposta ricevuta dal server:", data);
+       
+        alert("Veicolo postato correttamente!");
+    })
+    .catch(error => {
+        console.error("Si è verificato un errore:", error);
+        alert("Errore durante l'invio dei dati.");
+    });
+}
+
