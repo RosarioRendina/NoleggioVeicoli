@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.servlet.http.HttpSession;
+
 
 @RestController
 @RequestMapping("/api/utente")
-@CrossOrigin
+@CrossOrigin(origins = "localhost:5050")
 public class UtenteCtrl {
 	
 	@Autowired
@@ -32,16 +34,17 @@ public class UtenteCtrl {
 		return ResponseEntity.ok(utenti);
 	}
 	
+	/**
+	 * Possibilità di registrazione di un utente <br>
+	 * Richiede un json di un utente che abbia tutti i campi utili per la creazione: <br>
+	 * Nome, Cognome, Email, Password, Ruolo.
+	 * @param utente, richiesto negli headers con la POST
+	 * @return
+	 */
 	@PostMapping
 	public ResponseEntity<?> addOne(@RequestBody Utente utente) {
 
-
 		try {
-			/* funziona per riferimento:
-			 * l'utente arriva dal client senza id
-			 * viene passato al service e poi al repository
-			 * quando viene persistito / salvato mysql mette un id
-			 * e me lo ritrovo valorizzato nell'oggetto */
 			UtenteDto dto = utenteService.aggiungi(utente);
 			
 			return ResponseEntity.ok(dto);  //200
@@ -63,4 +66,13 @@ public class UtenteCtrl {
 		return ResponseEntity.ok(utente);
 	}
 
+	@GetMapping("/curr")
+	public ResponseEntity<Utente> getCurrent(HttpSession session) {
+		Utente check = (Utente) session.getAttribute("currentUser");
+		if (check != null) {
+			return ResponseEntity.ok(check);
+		}
+		return ResponseEntity.internalServerError().body(new Utente());
+	}
+		
 }

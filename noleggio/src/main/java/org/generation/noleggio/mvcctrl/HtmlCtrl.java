@@ -18,12 +18,17 @@ public class HtmlCtrl {
 	public String home() {
 		return "index";
 	}
-
-	@GetMapping("/test")
-	public String test() {
-		return "prova";
+	
+	@GetMapping({"/index", "/index.html", "/home"})
+	public String r_home() {
+		return "redirect:/";
 	}
-	/* EVENTUALE REMAPPING PAGINE */
+	
+	
+	@GetMapping("/errore.html")
+	public String red_errore() {
+		return "redirect:/errore";
+	}
 	
 	@GetMapping("/errore")
 	public String errore() {
@@ -32,22 +37,22 @@ public class HtmlCtrl {
 	
 	@GetMapping("/inserisci")
 	public String inserisci() {
+		
 		return "inserisci";
 	}
 	
 	@GetMapping("/pannello")
 	public String pannello(HttpSession session) {
 		
-//		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
+		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
 		
-//		if (currentUser.isPresent()) {
-//			Utente utente = (Utente) currentUser.get();
-//			
-//			return (utente.getRuolo() == UtenteRuolo.UTENTE) ? "errore" : "pannello";
-//		} else {
-//			return "login";
-//		}
-		return "pannello";
+		if (currentUser.isPresent()) {
+			Utente utente = (Utente) currentUser.get();
+			
+			return (utente.getRuolo() == UtenteRuolo.ADMIN) ? "pannello" : "redirect:/errore";
+		} else {
+			return "redirect:/login";
+		}
 	}
 	
 	@GetMapping("/utente")
@@ -59,6 +64,11 @@ public class HtmlCtrl {
 			return "login";
 		}
 		return "utente";
+	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
 	}
 	
 	@GetMapping("/veicolo")
