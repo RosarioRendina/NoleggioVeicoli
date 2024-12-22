@@ -91,24 +91,26 @@
         <p id="vehicle-description"></p>
     </div> -->
 
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="card-container">
-        <div class="card" style="width: 18rem;">
-            <img src="images/cammello.jpg" class="card-img-top img-card" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Veicolo</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos corporis temporibus, dolor non voluptate laudantium?</p>
-            </div>
+    <div class="container d-flex justify-content-center align-items-center veicolo-card">
+      <div class="card" style="max-width: 18rem;">
+        <img src="${imageUrl}" class="card-img-top" alt="${veicolo.categoria}">
+        <div class="card-body">
+            <h5 class="card-title">${veicolo.categoria}</h5>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Disponibile</li>
-              <li class="list-group-item">Catgoria</li>
-              <li class="list-group-item">Alimentazione</li>
+              <li class="list-group-item">Disponibilità: ${veicolo.disponibilita}</li>
+                <li class="list-group-item">Marca: ${veicolo.marca}</li>
+                <li class="list-group-item">Modello: ${veicolo.modello}, Colore: ${veicolo.colore}</li>
+                <li class="list-group-item">Colore: ${veicolo.colore}</li>
+                <li class="list-group-item">Alimentazione: ${veicolo.alimentazione}</li>
+                <li class="list-group-item">Cilindrata: ${veicolo.cilindrata}</li>
+                <li class="list-group-item">Indirizzo: ${veicolo.indirizzo}</li>
+                <li class="list-group-item">Coordinate: ${veicolo.coordinate}</li>
             </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
+            <div class="card-body text-center d-flex">
+            <a href="/templates/utente.html" class="d-flex btn btn-primary align-items-center" style="margin-right: 0.5rem;">Prenota</a>
+            <a href="/templates/veicolo.html" class="card-link btn btn-secondary">Torna alla home</a>
+        </div>
+        </div>
       </div>
     </div>
 

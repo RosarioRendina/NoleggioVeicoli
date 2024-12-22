@@ -40,15 +40,13 @@ function aggiungiVeicoli(veicoli) {
                         </ul>
                         <div class="card-body text-center d-flex">
                         <a href="/templates/utente.html" class="card-link btn btn-primary" style="margin-right: 0.5rem;">Prenota</a>
-                        <a href="/templates/veicolo.html" class="card-link btn btn-secondary">Informazioni</a>
+                        <a href="/templates/veicolo.html?id=${veicolo.veicolo_id}" class="card-link btn btn-secondary" )>Informazioni</a>
                     </div>
                     </div>
                 </div>
             </div>
         `;
     });
-
-
 }
 
 let monopattinoUrl = 'images/monopattino.jpg';
@@ -80,3 +78,5 @@ function getImageUrl(categoria) {
         return 'images/default.jpg';
     }
 }
+
+//gestione info veicolo 

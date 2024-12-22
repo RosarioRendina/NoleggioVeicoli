@@ -43,3 +43,4 @@ if (window.location.pathname === '/veicolo.html') {
         document.getElementById('vehicle-detail').innerHTML = 'Nessun dato trovato.';
     }
 }
+

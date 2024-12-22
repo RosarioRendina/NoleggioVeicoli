@@ -22,10 +22,10 @@
 </head>
 <body>
     
-    <div class="d-flex justify-content-center align-items-center mt-5 container-form">
-        <div class="container col-lg-6 text-center">
-            <h1 class="mb-5">Inserisci Nuovo Veicolo</h1>
-            <form id="vehicle-form" onsubmit="submitForm(event)">
+    <div class="d-flex justify-content-center align-items-centercontainer-form">
+        <div class="container col-lg-6 text-center" id="login-form">
+            <h1 class="mb-5 mt-3">Inserisci Nuovo Veicolo</h1>
+            <form id="vehicle-form" class="d-flex flex-column" onsubmit="submitForm(event)">
         
                 <!-- VEICOLI-->
                 <label for="category">Categoria Veicolo * </label>
@@ -88,13 +88,12 @@
                     <option value="Disponibile">Disponibile</option>
                     <option value="Non disponibile">Non disponibile</option>
                 </select>
-                <br>
+
         
                 <!-- UPLOAD IMMAGINE -->
-                <label for="image">Carica immagine</label>
+                <label for="image">Carica immagine:</label>
                 <input type="file" id="image" accept="image/*">
-                <br>
-                <br>
+
                 <button type="submit" id="inserisci-veicolo">Inserisci Veicolo</button>
             </form>
             <button onclick="logout()" id="logout">Logout</button>

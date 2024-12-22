@@ -465,4 +465,14 @@ span {
     border-radius: 8px;
     padding: 8px 2rem;
     color: #efefef;
+    margin-bottom: 4rem;
 }
+
+#login-form label  {
+
+    text-align: left;
+    color: #292929;
+}
+
+
+
