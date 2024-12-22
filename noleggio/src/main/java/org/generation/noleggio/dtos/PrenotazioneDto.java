@@ -1,40 +1,30 @@
-package org.generation.noleggio.entities;
+package org.generation.noleggio.dtos;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import org.generation.noleggio.entities.Utente;
+import org.generation.noleggio.entities.Veicolo;
 
-@Entity
-@Table(name = "prenotazioni")
-public class Prenotazione {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class PrenotazioneDto {
+
 	private Long id;
-	
-	@ManyToOne
-	@JoinColumn(name = "veicolo_id", nullable = false)
 	private Veicolo veicolo;
-	
-	@ManyToOne
-	@JoinColumn(name = "utente_id", nullable = false)
 	private Utente utente;
-	
-	@Column(name = "inizio_prenotazione", nullable = false)
 	private Date inizioPrenotazione;
-	
-	@Column(name = "in_corso", nullable = false)
 	private boolean inCorso;
-	
-	@Column(name = "fine_prenotazione", nullable = true)
 	private Date finePrenotazione;
+	
+	public PrenotazioneDto() {
+	}
+
+	public PrenotazioneDto(Long id, Date inizioPrenotazione, boolean inCorso,
+			Date finePrenotazione) {
+		this.id = id;
+		this.inizioPrenotazione = inizioPrenotazione;
+		this.inCorso = inCorso;
+		this.finePrenotazione = finePrenotazione;
+	}
 
 	public Long getId() {
 		return id;

@@ -7,11 +7,12 @@ import org.generation.noleggio.entities.Utente;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-//@SessionAttributes("currentUser")	-- serve solo se non uso HttpSession session
+@SessionAttributes("currentUser")	//-- serve solo se non uso HttpSession session
 public class HtmlCtrl {
 	
 	@GetMapping("/")
@@ -58,11 +59,17 @@ public class HtmlCtrl {
 	@GetMapping("/utente")
 	public String utente(HttpSession session) {
 		
-		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
+//		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
 //		Utente currentUser = (Utente) session.getAttribute("currentUser");
-		if (currentUser.isEmpty()) {
-			return "login";
+//		if (currentUser.isEmpty()) {
+//			return "redirect:/login";
+//		}
+		Utente currentUser = (Utente) session.getAttribute("currentUser");
+		
+		if (currentUser == null) {
+			return "redirect:/login";
 		}
+		
 		return "utente";
 	}
 	

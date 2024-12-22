@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api/utente")
-@CrossOrigin(origins = "localhost:5050")
+@CrossOrigin(origins = "localhost:5500")
 public class UtenteCtrl {
 	
 	@Autowired
