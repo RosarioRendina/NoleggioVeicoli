@@ -36,7 +36,7 @@ function aggiungiVeicoli(veicoli) {
                             <li class="list-group-item">Marca: ${veicolo.marca}</li>
                             <li class="list-group-item">Modello: ${veicolo.modello}</li>
                             <li class="list-group-item">Indirizzo: ${veicolo.indirizzo}</li>
-                            <li class="list-group-item">Disponibilità: ${veicolo.disponibilita}</li>
+                            <li class="list-group-item">Disponibilità: ${veicolo.disponibilita?"Noleggiabile":"Prenotata"}</li>
                         </ul>
                         <div class="card-body text-center d-flex">
                         <a href="/templates/utente.html" class="card-link btn btn-primary" style="margin-right: 0.5rem;">Prenota</a>
