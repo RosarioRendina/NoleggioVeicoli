@@ -538,3 +538,75 @@ span {
     }
   }
 }
+
+/* --------------------------------- utente --------------------------------- */
+
+.prenotazione-singola {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    border: 2px solid #8b8b8b;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem; 
+}
+
+
+.prenotazione-testo {
+    display: flex;
+    flex-direction: row; 
+    gap: 1rem; 
+    flex-grow: 1; 
+    word-wrap: break-word; 
+}
+
+
+.prenotazione-testo span {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.annulla {
+    background-color: red;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.modifica {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.annulla:hover,
+.modifica:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .prenotazione-singola {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    .prenotazione-testo {
+        flex-direction: column; 
+        gap: 0.5rem; 
+        margin-bottom: 1rem;
+    }
+
+
+    .prenotazione-azioni button {
+        flex: 1; 
+    }
+}
