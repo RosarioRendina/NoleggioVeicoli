@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 
 body {
-    max-width: 100vw;
+  max-width: 100vw;
   font-family: "Reddit Sans", sans-serif;
 }
 
@@ -39,15 +39,14 @@ h2 {
   align-items: center;
 }
 
-
 .user-icon {
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 2px solid black;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 .logo {
   margin-left: 2rem;
@@ -297,17 +296,17 @@ body {
 /*---------------------------------SIGN-UP--------------------------------------------*/
 
 .form-card {
-    
-  border: 2px solid purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* background-image: url(../images/cammellilogin.png); */
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .form-container {
-  margin-top: 15rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin: 15rem 5rem;
+  width: 30rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -428,8 +427,6 @@ span {
 }
 
 #inserisci-veicolo {
-  background-color: greenyellow;
-  color: green;
   margin: 2rem;
   border-radius: 8px;
   padding: 8px 1.5px;
@@ -450,19 +447,19 @@ span {
 
 /* media e colori max */
 .offcanvas-header .btn-close {
-    margin: 0;  
+  margin: 0;
 }
 
-.form-control{
-    border-radius: 8px;
+.form-control {
+  border-radius: 8px;
 }
 
-.form-control:focus{
-    box-shadow:none;
-    border-color: #4a0000;
+.form-control:focus {
+  box-shadow: none;
+  border-color: #4a0000;
 }
 .form-floating {
-    width: 86%;
+  width: 86%;
 }
 .btn-primary {
   --bs-btn-bg: #4a0000;
@@ -480,10 +477,10 @@ span {
   .navbar-nav li {
     padding-bottom: 0.5rem;
     background-color: #adc6b6;
-    }
+  }
 }
-.veicolo-card{
-    padding: 1rem 0;
+.veicolo-card {
+  padding: 1rem 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -499,28 +496,45 @@ span {
   .navbar-brand img {
     width: 5rem;
   }
-
-
 }
 @media screen and (min-width: 1024px) {
-    .search-form {
-        display: flex;
+  .search-form {
+    display: flex;
+  }
+  .fa-user {
+    width: auto;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+  .user-icon {
+    border: 0px;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+  .nav-item {
+    border-radius: 16px;
+  }
+  .navbar-nav li {
+    background-color: transparent !important;
+  }
+  body {
+    font-size: 18px;
+  }
+  .navbar-brand img {
+    width: 7rem;
+  }
+  .options ul {
+    padding: 3rem 0;
+    flex-direction: row;
+    li {
+      border-radius: 16px;
+      width: 23vw;
+      input {
+        width: 15vw;
+      }
     }
-    .fa-user{
-        width: auto;
-        height: fit-content;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding: 0.5rem;
-    }
-    .user-icon{
-        border: 0px;
-        height: auto;
-        display: flex;
-        align-items: center;
-    }
-    .nav-item {
-        border-radius: 16px;
-        
-    }
+  }
 }
