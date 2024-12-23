@@ -1,4 +1,13 @@
-var swiper = new Swiper(".mySwiper", {});
+var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+const swiperbutton = document.querySelector('.swiper').swiper;
+
+// Now you can use all slider methods like
+swiperbutton.slideNext();
 
 const key = 'http://localhost:8080/api/veicolo';
 
@@ -80,3 +89,4 @@ function getImageUrl(categoria) {
 }
 
 //gestione info veicolo 
+

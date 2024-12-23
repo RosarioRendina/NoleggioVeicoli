@@ -230,6 +230,10 @@ textarea {
 }
 
 /* -------------------------------- carosello ------------------------------- */
+/* max prex.next */
+.swiper-button-prev , .swiper-button-next{
+  display: none;
+}
 
 html,
 body {
@@ -498,6 +502,11 @@ span {
   }
 }
 @media screen and (min-width: 1024px) {
+  .swiper-button-prev , .swiper-button-next{
+    display: block;
+    color: #4A0000;
+  }
+  
   .search-form {
     display: flex;
   }
