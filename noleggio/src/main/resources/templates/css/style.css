@@ -818,7 +818,7 @@ span {
 
 /* --------------------------------- utente --------------------------------- */
 
- .prenotazione-singola {
+ .prenotazione-singola, .modifica-singola {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
@@ -827,6 +827,11 @@ span {
     background-color: #ffffff;
     padding: 1rem;
     margin-bottom: 1rem; 
+}
+
+.modifica-singola {
+  display: none;
+  background-color: #b9ff94a3;
 }
 
 
@@ -855,7 +860,7 @@ span {
 }
 
 
-.modifica {
+.modifica, .accetta-modifiche{
     background-color: #0056b3;
     color: white;
     padding: 0.5rem 1rem;
