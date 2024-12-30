@@ -97,8 +97,8 @@ function getImageUrl(categoria) {
 const uriUtente = 'http://localhost:8080/api/utente/curr';
 
 
-
-fetch (uriUtente) 
+async function checkLoggato() 
+{const currUtente = await fetch (uriUtente) 
     .then(response => {
         console.log(response);
         return response.json();
@@ -106,7 +106,7 @@ fetch (uriUtente)
     })
 
     .then (data => {
-        console.log(data);
+       return data;
         
     })
 
@@ -114,3 +114,8 @@ fetch (uriUtente)
         console.log(err);
         
     });
+    console.log(currUtente);
+    
+}
+
+checkLoggato();
