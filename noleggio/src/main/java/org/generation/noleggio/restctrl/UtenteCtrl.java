@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api/utente")
-@CrossOrigin(origins = "localhost:5500")
+@CrossOrigin
 public class UtenteCtrl {
 	
 	@Autowired
@@ -68,11 +68,18 @@ public class UtenteCtrl {
 
 	@GetMapping("/curr")
 	public ResponseEntity<Utente> getCurrent(HttpSession session) {
-		Utente check = (Utente) session.getAttribute("currentUser");
-		if (check != null) {
-			return ResponseEntity.ok(check);
+		try {
+			Utente check = (Utente) session.getAttribute("currentUser");
+			if (check != null) {
+				return ResponseEntity.ok(check);
+			} else {
+				return ResponseEntity.ok(new Utente());
+			}
+		} catch (Exception e) {
+			return ResponseEntity.internalServerError().body(new Utente());
 		}
-		return ResponseEntity.internalServerError().body(new Utente());
+		
+		
 	}
 		
 }
