@@ -28,3 +28,4 @@ async function logout() {
     await fetch('/test/logout', { method: 'POST' });
     alert('Logged out!');
 }
+

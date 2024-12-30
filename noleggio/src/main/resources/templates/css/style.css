@@ -810,7 +810,7 @@ span {
 
 /* --------------------------------- utente --------------------------------- */
 
-/* .prenotazione-singola {
+ .prenotazione-singola {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
@@ -877,4 +877,4 @@ span {
     .prenotazione-azioni button {
         flex: 1; 
     }
-} */
+} 
