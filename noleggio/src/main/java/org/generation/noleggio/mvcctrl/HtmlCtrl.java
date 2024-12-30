@@ -61,7 +61,7 @@ public class HtmlCtrl {
 		}
 	}
 	
-	@GetMapping("/utente")
+	@GetMapping({"/utente", "/utente.html"})
 	public String utente(HttpSession session) {
 		
 //		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));

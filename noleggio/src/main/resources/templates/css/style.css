@@ -61,18 +61,26 @@ h2 {
 .nav-item .user-icon {
     position: relative;
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.nav-item .user-icon:hover {
+  transform: scale(1.1);
+
 }
 
 .user-icon::before {
-    position: absolute;
-    height: 1.75rem;
-    width: 1.75rem;
-    left: 1px;
-    
-    content: '';
-
-    border: 2px solid #00000099;
-    border-radius: 50%;
+  position: absolute;
+  height: 1.75rem;
+  width: 1.75rem;
+  left: 1px;
+  
+  content: '';
+  
+  border: 2px solid #00000099;
+  border-radius: 50%;
 }
 
 .nav-item .user-icon i {

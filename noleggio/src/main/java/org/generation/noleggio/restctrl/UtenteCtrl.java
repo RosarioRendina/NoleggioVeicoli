@@ -78,8 +78,6 @@ public class UtenteCtrl {
 		} catch (Exception e) {
 			return ResponseEntity.internalServerError().body(new Utente());
 		}
-		
-		
 	}
 		
 }
