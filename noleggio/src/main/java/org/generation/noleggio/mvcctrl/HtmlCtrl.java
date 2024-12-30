@@ -6,6 +6,7 @@ import org.generation.noleggio.dtos.UtenteRuolo;
 import org.generation.noleggio.entities.Utente;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.servlet.http.HttpSession;
@@ -83,7 +84,7 @@ public class HtmlCtrl {
 	}
 	
 	@GetMapping("/veicolo")
-	public String veicolo() {
+	public String veicolo(@RequestParam("id") long id) {
 		return "veicolo";
 	}
 	
