@@ -3,20 +3,22 @@
 /* -------------------------------------------------------------------------- */
 
 body {
-    font-family: 'Reddit Sans', sans-serif;
+  max-width: 100vw;
+  font-family: "Reddit Sans", sans-serif;
 }
 
-h1, h2 {
-    font-family: 'Pacifico', serif;
-    color: #4A0000;
+h1,
+h2 {
+  font-family: "Pacifico", serif;
+  color: #4a0000;
 }
 
 .section-title {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .section-title h2 {
-    border-bottom: 2px dotted black;
+  border-bottom: 2px dotted black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -24,170 +26,156 @@ h1, h2 {
 /* -------------------------------------------------------------------------- */
 
 .navbar-nav {
-    display: flex;
-    justify-content: space-between;
-    /* position: relative; */
+  display: flex;
+  justify-content: space-between;
+  /* position: relative; */
 }
 
 .navbar {
-    background: rgba(255, 255, 255, 0.104);
+  background: rgba(255, 255, 255, 0.104);
 }
 
 .search-form {
- 
-    align-items: center;
+  align-items: center;
 }
 
 .user-icon {
-    width: 1.8rem;  
-    height: 1.8rem;  
-    border: 2px solid black;
-    border-radius: 50%;
-    text-align: center;
-}   
-
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 .logo {
-    max-height: 50px;
-    max-width: 50px;
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.492);
+  background-color: rgba(255, 255, 255, 0.492);
 }
 
 .fa-user {
-    height: 70%;
-    width: auto;
-
+  height: 70%;
+  width: auto;
 }
 
 .offcanvas-body {
-    justify-content: space-between;
-
+  justify-content: space-between;
 }
 
 .background {
-    background-image: url(images/dunedesert.jpg);
-    /* background-position: start;
+  background-image: url(../images/dunedesert.jpg);
+  /* background-position: start;
     background-repeat: no-repeat;
     height: 100vh; */
 
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
 
 /* -------------------------------------------------------------------------- */
 /*                                    HERO                                    */
 /* -------------------------------------------------------------------------- */
 
 #hero {
+  background-image: url("../img/hero.jpg");
 
-
-    background-image: url('img/hero.jpg');
-
-    /* The holy trinity of background images */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    /*nota: viene ereditata anche da desktop!*/
-/* 
+  /* The holy trinity of background images */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*nota: viene ereditata anche da desktop!*/
+  /* 
     height: 60vh; */
 
-    color: #000000;
+  color: #000000;
 
-    /* background: rgb(253,232,209);
+  /* background: rgb(253,232,209);
     background: linear-gradient(0deg, rgba(253,232,209,1) 0%, rgba(187,127,54,1) 100%);; */
-
 }
 
 #hero h1 {
-    color: #000000;
+  color: #000000;
 }
 
 ul {
-    list-style: none; 
-    padding: 3rem; 
-    width: 100%; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    align-items: stretch; 
-    /* gap: 1rem;  */
+  list-style: none;
+  padding: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  /* gap: 1rem;  */
 }
 
 ul li {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 1rem; 
-    width: 100%; 
-    background-color: rgb(240, 240, 240); 
-    /* border: 1px solid #ccc;  */
-    /* border-radius: 8px;  */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+  /* border: 1px solid #ccc;  */
+  /* border-radius: 8px;  */
 }
 
 ul li i {
-    font-size: 1.5rem;
-    color: #007bff; 
-    margin-right: 1rem; 
+  font-size: 1.5rem;
+  color: #4a0000;
+  margin-right: 1rem;
 }
 
 ul li .search-form input {
-    flex: 1; 
-    padding: 0.75rem; 
-    border: none; 
-    border-radius: 8px; 
-    font-size: 1rem; 
-    background-color: #ffffff; 
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
 }
 
 ul li .search-form input:focus {
-    outline: none; 
-    border: 2px solid #007bff; 
+  outline: none;
+  border: 2px solid #007bff;
 }
 
 ul li:first-child {
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 ul li:last-child {
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
-
 
 ul .search-form input:focus {
-    outline: none; 
-    border-color: #007bff; 
+  outline: none;
+  border-color: #007bff;
 }
 
-
 .options {
-    display: flex;
-    align-items: start;
-    /* border: 2px solid red;  */
-    /* background-color: rgba(232, 235, 232, 0.155);  */
-    border-radius: 16px;
-    
+  display: flex;
+  align-items: start;
+  /* border: 2px solid red;  */
+  /* background-color: rgba(232, 235, 232, 0.155);  */
+  border-radius: 16px;
 }
 
 .opzioni {
-    align-items: center;
+  align-items: center;
 }
 
 .secondo-text {
-    background-color: #d1613d;
-    color: #eee;
+  background-color: #d1613d;
+  color: #eee;
 }
 
-
-
 .immaginejeep {
-    
-    width: 100%;
+  width: 100%;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -195,62 +183,57 @@ ul .search-form input:focus {
 /* -------------------------------------------------------------------------- */
 
 #image-spacer {
-    background-image: url('img/la_webp.webp');
+  background-image: url("../img/la_webp.webp");
 
-      /* The holy trinity of background images */
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      /*nota: viene ereditata anche da desktop!*/
+  /* The holy trinity of background images */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*nota: viene ereditata anche da desktop!*/
 
-      background-attachment: fixed; /*nessuno scroll sull'immagine*/
-      height:400px;
+  background-attachment: fixed; /*nessuno scroll sull'immagine*/
+  height: 400px;
 
-      margin: 5rem auto;
+  margin: 5rem auto;
 }
 
 /* Background-attachment: fixed ha problemi su Safari. Per ovviare possiamo usare questo hack: */
 
 @supports (-webkit-touch-callout: none) {
-    #image-spacer {
-      background-attachment: scroll; /* Disabilita fixed solo su Safari */
-    }
+  #image-spacer {
+    background-attachment: scroll; /* Disabilita fixed solo su Safari */
   }
-
+}
 
 textarea {
-    height:200px;
+  height: 200px;
 }
-
 
 #main-footer {
-background: #7571bb;
-color:#efefef;
+  background: #d1613c;
+  color: #efefef;
 }
-
-
-
-
 
 /* -------------------------------------------------------------------------- */
 /*                                 STILI LARGE                                */
 /* -------------------------------------------------------------------------- */
 
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
+  #hero {
+    /*se abbiamo la navbar normale e non fixed-top*/
+    height: calc(100vh - 67px);
+  }
 
-    #hero {
-        /*se abbiamo la navbar normale e non fixed-top*/
-        height: calc(100vh - 67px);
-        
-       
-    }
-
-    textarea {
-        height: auto;
-    }
+  textarea {
+    height: auto;
+  }
 }
 
 /* -------------------------------- carosello ------------------------------- */
+/* max prex.next */
+.swiper-button-prev , .swiper-button-next{
+  display: none;
+}
 
 html,
 body {
@@ -275,7 +258,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #ffffff00;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,5 +271,351 @@ body {
   object-fit: cover;
 }
 
+.list-group {
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
 
-/*---------------------------------LOGIN--------------------------------------------*/
+.container-carousel {
+  background: rgb(181, 66, 39);
+  background: linear-gradient(
+    180deg,
+    rgba(181, 66, 39, 1) 0%,
+    rgba(238, 238, 238, 1) 100%
+  );
+}
+
+.card {
+  margin-top: 4rem;
+}
+
+.card h5 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/*---------------------------------LOGIN / SIGNUP --------------------------------------------*/
+/*---------------------------------SIGN-UP--------------------------------------------*/
+
+.form-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url(../images/cammellilogin.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-container {
+  margin: 15rem 5rem;
+  width: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(145, 145, 145);
+  border-radius: 16px;
+  background-color: #fff;
+  position: relative;
+}
+
+.form-container h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  font-size: 5rem;
+}
+
+#login {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.form-container input {
+  height: 5rem;
+  border: 2px solid #a7a7a7;
+}
+
+.form-container button {
+  height: 5rem;
+}
+
+span {
+  font-size: 32px;
+}
+
+.icone {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  font-size: 24px;
+  color: rgb(64, 64, 64);
+}
+
+#accedi-con,
+#giuauser {
+  font-size: 32px;
+}
+
+#forms-login input::placeholder {
+  font-size: 32px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 40px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+  height: 40px !important;
+}
+
+.form-check-input:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.form-check-input:checked::after {
+  content: "✓";
+  font-size: 14px;
+  color: white;
+}
+
+.form-check-label {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.form-check-label p {
+  margin: 0;
+}
+
+.form-check:hover .form-check-input {
+  border-color: #0056b3;
+}
+
+/*-------------------------------VEICOLO----------------------------------------------------*/
+.card-container {
+  margin-top: 4rem;
+}
+
+.img-card {
+  max-width: 100%;
+}
+
+/* ---------------------------- inserisci veicolo --------------------------- */
+
+.container-form {
+  padding: 1rem 0;
+  margin-right: 0;
+  margin-left: 0;
+  border: 1px solid #a7a7a7;
+  border-radius: 16px;
+  background-color: #ededed;
+}
+
+#inserisci-veicolo {
+  margin: 2rem;
+  border-radius: 8px;
+  padding: 8px 1.5px;
+}
+
+#logout {
+  background-color: red;
+  border-radius: 8px;
+  padding: 8px 2rem;
+  color: #efefef;
+  margin-bottom: 4rem;
+}
+
+#login-form label {
+  text-align: left;
+  color: #292929;
+}
+
+/* media e colori max */
+.offcanvas-header .btn-close {
+  margin: 0;
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #4a0000;
+}
+.form-floating {
+  width: 86%;
+}
+.btn-primary {
+  --bs-btn-bg: #4a0000;
+  --bs-btn-border-color: #4a0000;
+  --bs-btn-hover-bg: #660b0b;
+  --bs-btn-hover-border-color: #660b0b;
+  --bs-btn-active-bg: #660b0b;
+  --bs-btn-active-border-color: #660b0b;
+}
+.navbar-brand img {
+  width: 5rem;
+}
+.offcanvas {
+  background-color: #cbd9d0;
+  .navbar-nav li {
+    padding-bottom: 0.5rem;
+    background-color: #adc6b6;
+  }
+}
+.veicolo-card {
+  padding: 1rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .container.container-carousel {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .secondo-text {
+    padding: 2% 5% 0 5%;
+  }
+
+  .navbar-brand img {
+    width: 5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .swiper-button-prev , .swiper-button-next{
+    display: block;
+    color: #4A0000;
+  }
+  
+  .search-form {
+    display: flex;
+  }
+  .fa-user {
+    width: auto;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+  .user-icon {
+    border: 0px;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+  .nav-item {
+    border-radius: 16px;
+  }
+  .navbar-nav li {
+    background-color: transparent !important;
+  }
+  body {
+    font-size: 18px;
+  }
+  .navbar-brand img {
+    width: 7rem;
+  }
+  .options ul {
+    padding: 3rem 0;
+    flex-direction: row;
+    li {
+      border-radius: 16px;
+      width: 23vw;
+      input {
+        width: 15vw;
+      }
+    }
+  }
+}
+
+/* --------------------------------- utente --------------------------------- */
+
+.prenotazione-singola {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    border: 2px solid #8b8b8b;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem; 
+}
+
+
+.prenotazione-testo {
+    display: flex;
+    flex-direction: row; 
+    gap: 1rem; 
+    flex-grow: 1; 
+    word-wrap: break-word; 
+}
+
+
+.prenotazione-testo span {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.annulla {
+    background-color: red;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.modifica {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.annulla:hover,
+.modifica:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .prenotazione-singola {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    .prenotazione-testo {
+        flex-direction: column; 
+        gap: 0.5rem; 
+        margin-bottom: 1rem;
+    }
+
+
+    .prenotazione-azioni button {
+        flex: 1; 
+    }
+}

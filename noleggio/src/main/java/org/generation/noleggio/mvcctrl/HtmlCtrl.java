@@ -1,12 +1,11 @@
 package org.generation.noleggio.mvcctrl;
 
-import java.util.Optional;
+//import java.util.Optional;
 
 import org.generation.noleggio.dtos.UtenteRuolo;
 import org.generation.noleggio.entities.Utente;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.servlet.http.HttpSession;
@@ -36,21 +35,26 @@ public class HtmlCtrl {
 		return "errore";
 	}
 	
+	@GetMapping("inserisci.html")
+	public String red_inserisci() {
+		return "redirect:/inserisci";
+	}
+		
 	@GetMapping("/inserisci")
 	public String inserisci() {
-		
 		return "inserisci";
 	}
 	
 	@GetMapping("/pannello")
 	public String pannello(HttpSession session) {
 		
-		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
+//		Optional<Object> currentUser = Optional.of(session.getAttribute("currentUser"));
+		Utente currentUser = (Utente) session.getAttribute("currentUser");
 		
-		if (currentUser.isPresent()) {
-			Utente utente = (Utente) currentUser.get();
+		if (currentUser != null) {
+//			Utente utente = (Utente) currentUser.get();
 			
-			return (utente.getRuolo() == UtenteRuolo.ADMIN) ? "pannello" : "redirect:/errore";
+			return (currentUser.getRuolo() == UtenteRuolo.ADMIN) ? "pannello" : "redirect:/errore";
 		} else {
 			return "redirect:/login";
 		}
