@@ -1,15 +1,28 @@
-async function login() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+const loginBtn = document.querySelector('#loginBtn');
+const loginForm = document.querySelector('.form-login');
 
-    const response = await fetch('/test/login', {
+loginBtn.addEventListener('click', e => {
+    e.preventDefault();
+
+    const user = {
+        email: loginForm.email.value,
+        password: loginForm.password.value
+    };
+
+    login(user);
+});
+
+
+async function login(user) {
+
+    const response = await fetch('localhost:8080/test/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify(user)
     });
 
     if (response.ok) {
-        // salva in localStorage utente email
+        // salva in localStorage utente email?
         alert('Login successful!');
     } else {
         alert('Invalid credentials!');
@@ -28,3 +41,20 @@ async function logout() {
     await fetch('/test/logout', { method: 'POST' });
     alert('Logged out!');
 }
+
+const uriUtente = 'localhost:8080/api/utente/curr';
+
+let currUtente;
+let isLoggato = false;
+
+async function checkLoggato() {
+    await fetch (uriUtente) 
+        .then(response => response.json())
+        .then(data => {
+            currUtente = data;
+        })
+        .catch (err => console.log(err));
+    
+}
+
+checkLoggato();

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -22,6 +23,7 @@ import jakarta.servlet.http.HttpSession;
 @RestController
 @RequestMapping("/api/utente")
 @CrossOrigin
+@SessionAttributes("currentUser")
 public class UtenteCtrl {
 	
 	@Autowired
@@ -73,8 +75,10 @@ public class UtenteCtrl {
 			if (check != null) {
 				return ResponseEntity.ok(check);
 			} else {
-				return ResponseEntity.ok(new Utente());
+//				return ResponseEntity.ok(new Utente());
+				return ResponseEntity.status(404).body(new Utente());
 			}
+//			return ResponseEntity.ok(check);
 		} catch (Exception e) {
 			return ResponseEntity.internalServerError().body(new Utente());
 		}

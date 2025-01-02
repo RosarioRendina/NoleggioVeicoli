@@ -1,4 +1,6 @@
-const isIndex = window.location.pathname == "index.html" || window.location.pathname == "";
+let path = window.location.pathname.split('/');
+
+const isIndex = (path[path.length-1] == "index.html" || path[path.length-1] == "");
 
 if (isIndex) {
 
@@ -122,13 +124,26 @@ checkLoggato()
     }
 );
 
+const navBrand = document.querySelector('.navbar-brand');
 const userIcon = document.querySelector('.user-icon');
+const navHome = document.querySelector('.nav-link');
+
+let indexPath = path;
+indexPath[indexPath.length-1] = 'index.html';
+indexPath = indexPath.join('/');
+
+navBrand.href = indexPath;
+navHome.href = indexPath;
+
 
 userIcon.addEventListener('click', () => {
+    alert(isLoggato);
     if (isLoggato) {
-        window.location.pathname = 'utente.html'
+        path[path.length-1] = 'utente.html';
+        window.location.pathname = path.join('/');
     } else {
-        window.location.pathname = 'login.html'
+        path[path.length-1] = 'login.html';
+        window.location.pathname = path.join('/');
     }
 
 })  
