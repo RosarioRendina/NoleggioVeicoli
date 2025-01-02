@@ -139,9 +139,6 @@ checkLoggato()
     }
 );
 
-
-
-
 const navBrand = document.querySelector('.navbar-brand');
 const userIcon = document.querySelector('.user-icon');
 const navHome = document.querySelector('.nav-link');
@@ -156,6 +153,7 @@ navHome.href = indexPath;
 
 /* --------------------------------- separa --------------------------------- */
 userIcon.addEventListener('click', () => {
+    alert(isLoggato);
     if (isLoggato) {
         path[path.length-1] = 'utente.html';
         window.location.pathname = path.join('/');

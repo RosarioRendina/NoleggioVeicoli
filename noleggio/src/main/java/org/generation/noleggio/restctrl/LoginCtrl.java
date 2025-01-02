@@ -6,6 +6,7 @@ import org.generation.noleggio.repositories.UtenteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import jakarta.servlet.http.HttpSession;
 @RestController
 @RequestMapping("test")
 @SessionAttributes("currentUser")  // a login effettuato -> currentUser = emailUtente (o utente.getEmail())
+@CrossOrigin
 public class LoginCtrl {
 
 	@Autowired
@@ -25,9 +27,11 @@ public class LoginCtrl {
 	
 	@PostMapping("/login")
 	public ResponseEntity<String> login(@RequestBody UtenteDto utenteDto, HttpSession session) {
-		Utente utente = utenteRepository.findByEmail(utenteDto.getEmail())
-				.orElse(null);
 		
+		Utente utente = utenteRepository.findByEmail(utenteDto.getEmail()) //;
+				.orElse(null);
+				
+			
 		if (utente != null && utente.getPassword().equals(utenteDto.getPassword())) {
 			session.setAttribute("currentUser", utente);
 			return ResponseEntity.ok("Login effettuato con successo");

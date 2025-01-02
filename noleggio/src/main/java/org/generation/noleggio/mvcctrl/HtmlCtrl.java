@@ -83,6 +83,11 @@ public class HtmlCtrl {
 		return "login";
 	}
 	
+	@GetMapping("/login.html")
+	public String red_login() {
+		return "redirect:/login";
+	}
+	
 	@GetMapping("/veicolo")
 	public String veicolo(@RequestParam("id") long id) {
 		return "veicolo";
