@@ -94,9 +94,24 @@ if (isIndex) {
         }
     }
 }
+
 //gestione info veicolo 
 
+//gestione user
 
+let modifica = document.querySelector('.modifica');
+let modificaSingola = document.querySelector('.modifica-singola');
+let dismiss = document.querySelector('#dismiss');
+
+    
+    modifica.addEventListener('click', e =>{
+        modificaSingola.classList.toggle('d-block');
+    })
+
+
+    dismiss.addEventListener('click', e =>{
+        modificaSingola.classList.toggle('d-block');
+    })
 
 // check login
 
@@ -128,6 +143,7 @@ const navBrand = document.querySelector('.navbar-brand');
 const userIcon = document.querySelector('.user-icon');
 const navHome = document.querySelector('.nav-link');
 
+
 let indexPath = path;
 indexPath[indexPath.length-1] = 'index.html';
 indexPath = indexPath.join('/');
@@ -135,7 +151,7 @@ indexPath = indexPath.join('/');
 navBrand.href = indexPath;
 navHome.href = indexPath;
 
-
+/* --------------------------------- separa --------------------------------- */
 userIcon.addEventListener('click', () => {
     alert(isLoggato);
     if (isLoggato) {
@@ -146,4 +162,5 @@ userIcon.addEventListener('click', () => {
         window.location.pathname = path.join('/');
     }
 
-})  
+});
+
