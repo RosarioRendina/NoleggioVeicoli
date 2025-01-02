@@ -2,8 +2,14 @@ package org.generation.noleggio.entities;
 
 import java.sql.Date;
 
+import org.generation.noleggio.dtos.StatoPrenotazione;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,13 +31,15 @@ public class Prenotazione {
 	
 	@ManyToOne
 	@JoinColumn(name = "utente_id", nullable = false)
+	@JsonIgnore
 	private Utente utente;
 	
 	@Column(name = "inizio_prenotazione", nullable = false)
 	private Date inizioPrenotazione;
 	
-	@Column(name = "in_corso", nullable = false)
-	private boolean inCorso;
+	@Column(name= "stato_prenotazione", columnDefinition = "ENUM('ELETTRICA', 'BENZINA', 'DIESEL', 'GPL', 'IBRIDA')", nullable = false)
+	@Enumerated(EnumType.STRING)
+	private StatoPrenotazione statoPrenotazione;
 	
 	@Column(name = "fine_prenotazione", nullable = true)
 	private Date finePrenotazione;
@@ -68,20 +76,20 @@ public class Prenotazione {
 		this.inizioPrenotazione = inizioPrenotazione;
 	}
 
-	public boolean isInCorso() {
-		return inCorso;
-	}
-
-	public void setInCorso(boolean inCorso) {
-		this.inCorso = inCorso;
-	}
-
 	public Date getFinePrenotazione() {
 		return finePrenotazione;
 	}
 
 	public void setFinePrenotazione(Date finePrenotazione) {
 		this.finePrenotazione = finePrenotazione;
+	}
+
+	public StatoPrenotazione getStatoPrenotazione() {
+		return statoPrenotazione;
+	}
+
+	public void setStatoPrenotazione(StatoPrenotazione statoPrenotazione) {
+		this.statoPrenotazione = statoPrenotazione;
 	}
 	
 }

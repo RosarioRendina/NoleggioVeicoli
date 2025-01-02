@@ -26,7 +26,7 @@ public class LoginCtrl {
 	private UtenteRepo utenteRepository;
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody UtenteDto utenteDto, HttpSession session) {
+	public ResponseEntity<Utente> login(@RequestBody UtenteDto utenteDto, HttpSession session) {
 		
 		Utente utente = utenteRepository.findByEmail(utenteDto.getEmail()) //;
 				.orElse(null);
@@ -34,9 +34,9 @@ public class LoginCtrl {
 			
 		if (utente != null && utente.getPassword().equals(utenteDto.getPassword())) {
 			session.setAttribute("currentUser", utente);
-			return ResponseEntity.ok("Login effettuato con successo");
+			return ResponseEntity.ok(utente);
 		} else {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenziali non valide.");
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new Utente());
 		}
 	}
 	

@@ -12,17 +12,17 @@ public class PrenotazioneDto {
 	private Veicolo veicolo;
 	private Utente utente;
 	private Date inizioPrenotazione;
-	private boolean inCorso;
+	private StatoPrenotazione statoPrenotazione;
 	private Date finePrenotazione;
 	
 	public PrenotazioneDto() {
 	}
 
-	public PrenotazioneDto(Long id, Date inizioPrenotazione, boolean inCorso,
+	public PrenotazioneDto(Long id, Date inizioPrenotazione, StatoPrenotazione statoPrenotazione,
 			Date finePrenotazione) {
 		this.id = id;
 		this.inizioPrenotazione = inizioPrenotazione;
-		this.inCorso = inCorso;
+		this.statoPrenotazione = statoPrenotazione;
 		this.finePrenotazione = finePrenotazione;
 	}
 
@@ -58,14 +58,6 @@ public class PrenotazioneDto {
 		this.inizioPrenotazione = inizioPrenotazione;
 	}
 
-	public boolean isInCorso() {
-		return inCorso;
-	}
-
-	public void setInCorso(boolean inCorso) {
-		this.inCorso = inCorso;
-	}
-
 	public Date getFinePrenotazione() {
 		return finePrenotazione;
 	}
@@ -73,5 +65,14 @@ public class PrenotazioneDto {
 	public void setFinePrenotazione(Date finePrenotazione) {
 		this.finePrenotazione = finePrenotazione;
 	}
+
+	public StatoPrenotazione getStatoPrenotazione() {
+		return statoPrenotazione;
+	}
+
+	public void setStatoPrenotazione(StatoPrenotazione statoPrenotazione) {
+		this.statoPrenotazione = statoPrenotazione;
+	}
+
 	
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "localhost:5500")
+@CrossOrigin
 @RequestMapping("/api/prenotazione")
 public class PrenotazioneCtrl {
 	

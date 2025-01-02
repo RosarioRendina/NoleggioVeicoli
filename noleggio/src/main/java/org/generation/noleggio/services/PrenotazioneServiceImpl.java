@@ -38,7 +38,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		PrenotazioneDto dto = new PrenotazioneDto(
 				prenotazione.getId(),
 				prenotazione.getInizioPrenotazione(), 
-				prenotazione.isInCorso(), 
+				prenotazione.getStatoPrenotazione(), 
 				prenotazione.getFinePrenotazione()
 				);
 		dto.setUtente(prenotazione.getUtente());

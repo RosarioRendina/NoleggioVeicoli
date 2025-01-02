@@ -98,20 +98,66 @@ if (isIndex) {
 //gestione info veicolo 
 
 //gestione user
-
-let modifica = document.querySelector('.modifica');
-let modificaSingola = document.querySelector('.modifica-singola');
-let dismiss = document.querySelector('#dismiss');
-
+if (path[path.length - 1] === 'utente.html') {
+    let modifica = document.querySelector('.modifica');
+    let modificaSingola = document.querySelector('.modifica-singola');
+    let dismiss = document.querySelector('#dismiss');
     
-    modifica.addEventListener('click', e =>{
-        modificaSingola.classList.toggle('d-block');
-    })
+        
+        modifica.addEventListener('click', e =>{
+            modificaSingola.classList.toggle('d-block');
+        })
+    
+    
+        dismiss.addEventListener('click', e =>{
+            modificaSingola.classList.toggle('d-block');
+        })
+
+        const prenotazioniEndpoint = 'http://localhost:8080/api/prenotazione/';
+
+    async function getPrenotazioni(utente_id) {
+        const response = await fetch(prenotazioniEndpoint + utente_id);
+
+        let data = await response.json();
+
+        console.log(data);
+        
+        
+    }
+
+    let currUtente = localStorage.getItem('currentUser');
+    
+
+    if (currUtente !== null) {
+        console.log(JSON.parse(currUtente))
+        getPrenotazioni(JSON.parse(currUtente).id); 
+    }
 
 
-    dismiss.addEventListener('click', e =>{
-        modificaSingola.classList.toggle('d-block');
-    })
+
+
+
+
+    const logoutBtn = document.querySelector('#logoutBtn');
+
+    logoutBtn.addEventListener('click', e => {
+
+        e.preventDefault();
+        
+        logout();
+    });
+
+    async function logout() {
+        await fetch('/test/logout', { method: 'POST' });
+    
+        localStorage.clear();
+    
+        let path = window.location.pathname.split('/');
+        path[path.length - 1] = 'login.html';
+        window.location.pathname = path.join('/');
+    }
+
+}
 
 // check login
 
@@ -151,10 +197,13 @@ indexPath = indexPath.join('/');
 navBrand.href = indexPath;
 navHome.href = indexPath;
 
+let utenteLoggato = localStorage.getItem('currentUser');
+console.log(utenteLoggato);
+
 /* --------------------------------- separa --------------------------------- */
 userIcon.addEventListener('click', () => {
-    alert(isLoggato);
-    if (isLoggato) {
+    
+    if (utenteLoggato !== null) {
         path[path.length-1] = 'utente.html';
         window.location.pathname = path.join('/');
     } else {
