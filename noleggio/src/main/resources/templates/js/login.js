@@ -48,7 +48,14 @@ async function login(user) {
 
         localStorage.setItem('currentUser', JSON.stringify(utente))
 
-        path[path.length - 1] = 'utente.html';
+        let redirect = sessionStorage.getItem('redirect');
+
+        if (redirect !== null) {
+            path[path.length - 1] = redirect;
+            sessionStorage.clear();
+        } else {
+            path[path.length - 1] = 'utente.html';
+        }
         window.location.pathname = path.join('/');
     } else {
         alert('Invalid credentials!');
@@ -78,7 +85,8 @@ async function checkLoggato() {
     let utenteLoggato = localStorage.getItem('currentUser');
 
     if (utenteLoggato !== null) {
-        return true;
+        path[path.length - 1] = 'utente.html';
+        window.location.pathname = path.join('/');
     } else {
         return false;
     }
