@@ -829,11 +829,22 @@ span {
     margin-bottom: 1rem; 
 }
 
+
 .modifica-singola {
   display: none;
   background-color: #b9ff94a3;
+  border: 2px solid #30c50f;
 }
 
+.modifica-singola span {
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  /*border: 2px solid #0fc592;*/
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
 
 .prenotazione-testo {
     display: flex;
