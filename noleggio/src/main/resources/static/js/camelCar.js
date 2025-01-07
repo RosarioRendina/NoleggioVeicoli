@@ -55,7 +55,7 @@ if (isIndex) {
                             </ul>
                             <div class="card-body text-center d-flex">
                             <a href="/templates/utente.html" class="card-link btn btn-primary" style="margin-right: 0.5rem;">Prenota</a>
-                            <a href="/templates/veicolo.html?id=${veicolo.veicolo_id}" class="card-link btn btn-secondary" )>Informazioni</a>
+                            <a href="/templates/veicolo.html?id=${veicolo.veicoloId}" class="card-link btn btn-secondary" )>Informazioni</a>
                         </div>
                         </div>
                     </div>
@@ -94,7 +94,173 @@ if (isIndex) {
         }
     }
 }
+
 //gestione info veicolo 
+
+//gestione user
+if (path[path.length - 1] === 'utente.html') {
+    let modifica = document.querySelector('#inCorso');
+    let modificaSingola = document.querySelector('.modifica-singola');
+    
+        
+        modifica.addEventListener('click', e =>{
+            if(e.target.classList.contains('modifica') || e.target.classList.contains('fa-pen')){
+                console.log(e.target.tagName);
+                
+                let element = e.target.parentElement;
+                if (e.target.classList.contains('fa-pen')){
+                    element = element.parentElement;
+                }
+
+                element = Array.from(element.previousElementSibling.children);
+
+                console.log(element);
+                modificaSingola.classList.toggle('d-block');
+
+                modificaSingola.innerHTML= `
+                <h4 class="modifica-titolo">Modifica prenotazione:</h4>
+                    
+
+                        <div class="d-flex align-items-center">
+                          <div class="prenotazione-testo">
+                            <div class="data-inizio">${element[0].textContent}</div>
+                            <div class="data-fine">${element[1].textContent}</div>
+                            <div class="stato">${element[2].textContent}</div>
+                            <div class="veicolo-prenotato">${element[3].textContent}</div>
+                          </div>
+                          <div class="bottoni-prenotazione">
+                            <input type="submit" class="accetta-modifiche">
+                            <button class="annulla" id="dismiss">
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+                          </div>
+                        </div>
+                `;
+            }
+        })
+
+        // sbagliato rifare
+        // let dismiss = document.querySelector('#dismiss');
+        // dismiss.addEventListener('click' , e => {
+        //     if(e.target.classList.contains('annulla') || e.target.classList.contains('fa-trash')){
+        //     let element2 = e.target.parentElement.previousElementSibling.parentElement;
+        //     console.log(element2);
+            
+        //     }
+
+        // });
+    
+    
+        dismiss.addEventListener('click', e =>{
+            modificaSingola.classList.toggle('d-block');
+        })
+
+        const prenotazioniEndpoint = 'http://localhost:8080/api/prenotazione/';
+
+    async function getPrenotazioni(utente_id) {
+        const response = await fetch(prenotazioniEndpoint + utente_id);
+
+        let data = await response.json();
+
+        let prenotazioneInCorso = document.querySelector('#inCorso');
+        let prenotazioneTerminata = document.querySelector('#terminate');
+        let prenotazioneAnnullata = document.querySelector('#annullate');
+
+        data.forEach(data => {
+            if (data.statoPrenotazione === 'ANNULLATA'){
+                prenotazioneAnnullata.innerHTML+= `
+            <div class="prenotazione-testo">
+                <span class="data-inizio">${data.inizioPrenotazione}</span>
+                <span class="data-fine">${data.finePrenotazione}</span>
+                <span class="stato">${data.statoPrenotazione}</span>
+                <span class="veicolo-prenotato">${data.veicolo.categoria}</span>
+            </div>
+        
+            <div class="bottoni-prenotazione">
+                <button class="annulla">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+        
+            </div>
+            `;
+            } else if (data.statoPrenotazione === 'TERMINATA'){
+                prenotazioneTerminata.innerHTML+= `
+            <div class="prenotazione-testo">
+                <span class="data-inizio">${data.inizioPrenotazione}</span>
+                <span class="data-fine">${data.finePrenotazione}</span>
+                <span class="stato">${data.statoPrenotazione}</span>
+                <span class="veicolo-prenotato">${data.veicolo.categoria}</span>
+            </div>
+        
+            <div class="bottoni-prenotazione">
+                <button class="annulla">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+        
+            </div>
+            `;
+            } else {
+                prenotazioneInCorso.innerHTML+= `
+        
+                <div class="prenotazione-singola">
+            <div class="prenotazione-testo">
+                <div class="data-inizio">${data.inizioPrenotazione}</div>
+                <div class="data-fine">${data.finePrenotazione}</div>
+                <div class="stato">${data.statoPrenotazione}</div>
+                <div class="veicolo-prenotato">${data.veicolo.categoria}</div>
+            </div>
+        
+            <div class="bottoni-prenotazione">
+               <button class="modifica">
+                <i class="fa-solid fa-pen"></i>
+               </button>
+                <button class="annulla">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+        
+            </div>
+            </div>
+        `;
+    }});
+}
+
+    let currUtente = localStorage.getItem('currentUser');
+    let currPrenotazione;
+
+    if (currUtente !== null) {
+        console.log(JSON.parse(currUtente))
+        currPrenotazione = getPrenotazioni(JSON.parse(currUtente).id); 
+    }
+
+    console.log(currPrenotazione);
+    
+
+
+
+
+    const logoutBtn = document.querySelector('#logoutBtn');
+
+    logoutBtn.addEventListener('click', e => {
+
+        e.preventDefault();
+        
+        logout();
+    });
+
+    async function logout() {
+        await fetch('/test/logout', { method: 'POST' });
+    
+        localStorage.clear();
+    
+        let path = window.location.pathname.split('/');
+        path[path.length - 1] = 'login.html';
+        window.location.pathname = path.join('/');
+    }
+
+}
+
+//gestione dati prenotazione
+
 
 
 
@@ -128,6 +294,7 @@ const navBrand = document.querySelector('.navbar-brand');
 const userIcon = document.querySelector('.user-icon');
 const navHome = document.querySelector('.nav-link');
 
+
 let indexPath = path;
 indexPath[indexPath.length-1] = 'index.html';
 indexPath = indexPath.join('/');
@@ -135,10 +302,13 @@ indexPath = indexPath.join('/');
 navBrand.href = indexPath;
 navHome.href = indexPath;
 
+let utenteLoggato = localStorage.getItem('currentUser');
+console.log(utenteLoggato);
 
+/* --------------------------------- separa --------------------------------- */
 userIcon.addEventListener('click', () => {
-    alert(isLoggato);
-    if (isLoggato) {
+    
+    if (utenteLoggato !== null) {
         path[path.length-1] = 'utente.html';
         window.location.pathname = path.join('/');
     } else {
@@ -146,4 +316,5 @@ userIcon.addEventListener('click', () => {
         window.location.pathname = path.join('/');
     }
 
-})  
+});
+

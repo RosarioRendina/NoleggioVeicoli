@@ -41,7 +41,7 @@ async function login(user) {
         let utenteLogged = await response.json();
 
         let utente = {
-            id: utenteLogged.utente_id,
+            utenteId: utenteLogged.utente_id,
             ruolo: utenteLogged.ruolo,
             nome: utenteLogged.nome
         }

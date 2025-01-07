@@ -1,5 +1,20 @@
 const loginBtn = document.querySelector('#loginBtn');
+const logoutBtn = document.querySelector('#logoutBtn');
 const loginForm = document.querySelector('.form-login');
+
+
+const navBrand = document.querySelector('.navbar-brand');
+const userIcon = document.querySelector('.user-icon');
+const navHome = document.querySelector('.nav-link');
+
+let path = window.location.pathname.split('/');
+
+let indexPath = path;
+indexPath[indexPath.length-1] = 'index.html';
+indexPath = indexPath.join('/');
+
+navBrand.href = indexPath;
+navHome.href = indexPath;
 
 loginBtn.addEventListener('click', e => {
     e.preventDefault();
@@ -15,15 +30,33 @@ loginBtn.addEventListener('click', e => {
 
 async function login(user) {
 
-    const response = await fetch('localhost:8080/test/login', {
+    const response = await fetch('http://127.0.0.1:8080/test/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user)
     });
 
     if (response.ok) {
-        // salva in localStorage utente email?
-        alert('Login successful!');
+        
+        let utenteLogged = await response.json();
+
+        let utente = {
+            utenteId: utenteLogged.utente_id,
+            ruolo: utenteLogged.ruolo,
+            nome: utenteLogged.nome
+        }
+
+        localStorage.setItem('currentUser', JSON.stringify(utente))
+
+        let redirect = sessionStorage.getItem('redirect');
+
+        if (redirect !== null) {
+            path[path.length - 1] = redirect;
+            sessionStorage.clear();
+        } else {
+            path[path.length - 1] = 'utente.html';
+        }
+        window.location.pathname = path.join('/');
     } else {
         alert('Invalid credentials!');
     }
@@ -32,28 +65,31 @@ async function login(user) {
 // if utente email in localStorage -> form email value = localStorage(utenteEmail)
 
 async function accessProtected() {
-    const response = await fetch('/test/protected');
+    const response = await fetch('http://127.0.0.1:8080/test/protected');
     const text = await response.text();
     alert(text);
 }
 
 async function logout() {
     await fetch('/test/logout', { method: 'POST' });
-    alert('Logged out!');
+
+    localStorage.clear();
+
+    path[path.length - 1] = 'login.html';
+    window.location.pathname = path.join('/');
 }
 
-const uriUtente = 'localhost:8080/api/utente/curr';
-
-let currUtente;
-let isLoggato = false;
 
 async function checkLoggato() {
-    await fetch (uriUtente) 
-        .then(response => response.json())
-        .then(data => {
-            currUtente = data;
-        })
-        .catch (err => console.log(err));
+    
+    let utenteLoggato = localStorage.getItem('currentUser');
+
+    if (utenteLoggato !== null) {
+        path[path.length - 1] = 'utente.html';
+        window.location.pathname = path.join('/');
+    } else {
+        return false;
+    }
     
 }
 
